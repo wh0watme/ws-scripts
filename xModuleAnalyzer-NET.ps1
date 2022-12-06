@@ -1,4 +1,3 @@
-Set-Variable JARFILE $(System.DefaultWorkingDirectory)\wss-unified-agent.jar
 Set-Variable SEARCHDIR (Get-Location)
 
 if (Test-Path -Path .\multi_module.ps1 -PathType Leaf) {
