@@ -8,7 +8,7 @@ Get-ChildItem -Include "*.csproj" -Recurse | Where-Object DirectoryName -NotLike
      Set-Variable CSPROJDIR (Resolve-Path $_ | Split-Path -parent)
      Write-Output "CSPROJDIR= $CSPROJDIR"
      Set-Variable CSPROJ $_.BaseName
-     Get-ChildItem -Recurse -Include *.dll | Where-Object FullName -like $CSPROJDIR*\$CSPROJ.dll | Where-Object DirectoryName -NotLike *\obj\* | ForEach-Object {
+     Get-ChildItem -Recurse -Include *.dll | Where-Object FullName -like $CSPROJDIR*\$CSPROJ.dll | ForEach-Object {
         #Set-Variable DLL $_.FullName
         Set-Variable DLL (Resolve-Path -Relative $_)
         Write-Output "DLL= $DLL"
