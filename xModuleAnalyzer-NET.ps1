@@ -10,6 +10,6 @@ Get-ChildItem -Include "*.csproj" -Recurse | Where-Object DirectoryName -NotLike
         Write-Output "DLL= $DLL"
         Set-Variable RELCSPROJDIR (Resolve-Path -Relative $CSPROJDIR)
         Write-Output "RELCSPROJDIR= $RELCSPROJDIR"
-        java -XX:+UseG1GC -Xmx8g -jar $JARFILE -appPath $DLL -d $RELCSPROJDIR -project $CSPROJ 
+        java -XX:+UseG1GC -Xmx4g -jar $JARFILE -appPath $DLL -d $RELCSPROJDIR -project $CSPROJ 
      }
    }
